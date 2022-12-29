@@ -1,6 +1,6 @@
 # DreamBooth ハッカソン 🏆
 
-DreamBoothハッカソンへようこそ! このイベントは、安定した拡散モデルをあなたの画像で微調整することで、 **パーソナライズするコミュニティイベントです**。そのためには、[_DreamBooth_](https://arxiv.org/abs/2208.12242)という強力なテクニックを使います。このテクニックを使うと、モデルの出力領域に被験者（例えば、ペットやお気に入りの料理）を埋め込み、プロンプトに_ユニーク識別子_をつけて合成することができるようになります。
+DreamBoothハッカソンへようこそ! このイベントは、Stable Diffusionモデルをあなたの画像で微調整することで、 **パーソナライズするコミュニティイベントです**。そのためには、[_DreamBooth_](https://arxiv.org/abs/2208.12242)という強力なテクニックを使います。このテクニックを使うと、モデルの出力領域に被験者（例えば、ペットやお気に入りの料理）を埋め込み、プロンプトに _ユニーク識別子_ をつけて合成することができるようになります。
 
 このコンペティションは5つのテーマで構成されており、各テーマでは以下のカテゴリーに属するモデルを募集しています:
 
@@ -23,7 +23,7 @@ DreamBoothハッカソンへようこそ! このイベントは、安定した�
 |:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DreamBoothトレーニング                              | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              |
 
-**備考 👋:** DreamBoothノートブックでは、微調整を行う安定拡散モデルとして[`CompVis/stable-diffusion-v1-4`](https://huggingface.co/CompVis/stable-diffusion-v1-4)のチェックポイントを使用します。ただ、適切なコンポーネントと安全性チェッカー（存在する場合）をロードするようにコードを調整する必要があります。微調整が必要な興味深いモデルには、以下のようなものがあります:
+**備考 👋:** DreamBooth Notebookでは、ファインチューニングするStable Diffusionモデルとして[`CompVis/stable-diffusion-v1-4`](https://huggingface.co/CompVis/stable-diffusion-v1-4)のチェックポイントを使用します。ただ、適切なコンポーネントと安全性チェッカー（存在する場合）をロードするようにコードを調整する必要があります。微調整が必要な興味深いモデルには、以下のようなものがあります:
 
 * [`runwayml/stable-diffusion-v1-5`](https://huggingface.co/runwayml/stable-diffusion-v1-5)
 * [`prompthero/openjourney`](https://huggingface.co/prompthero/openjourney)
@@ -32,7 +32,7 @@ DreamBoothハッカソンへようこそ! このイベントは、安定した�
 * [`stabilityai/stable-diffusion-2-1`](https://huggingface.co/stabilityai/stable-diffusion-2-1)
 * [`nitrosocke/elden-ring-diffusion`](https://huggingface.co/nitrosocke/elden-ring-diffusion)
 
-## Evaluation & Leaderboard
+## 評価＆リーダーボード
 
 モデルカードに`dreambooth-hackathon`タグを付けて、1つ以上のDreamBoothモデルをHubにプッシュすると、賞品がもらえます（[例](https://huggingface.co/lewtun/ccorgi-dog/blob/main/README.md#L9))。これは[DreamBooth notebook](https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)で自動的に作成されますが、独自のスクリプトを実行している場合は追加する必要があります。
 
