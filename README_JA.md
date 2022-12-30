@@ -63,3 +63,4 @@
 | 言語                                                                      | 執筆者 |
 |:------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
 | [Chinese](https://github.com/darcula1993/diffusion-models-class-CN/blob/main/README_CN.md)     | [@darcula1993](https://github.com/darcula1993) [@XhrLeokk](https://github.com/XhrLeokk)|
+| [Japanese](https://github.com/eltociear/diffusion-models-class-JA/blob/main/README_JA.md)     | [@eltociear](https://github.com/eltociear)|
