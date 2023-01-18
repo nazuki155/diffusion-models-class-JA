@@ -9,7 +9,7 @@ Hugging Face Diffusionモデルコースのユニット1へようこそ!この�
 
 - 新しい教材がリリースされたときに通知を受けることができるように、[このコースにサインアップ](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162)していることを確認してください
 - 以下の紹介資料と、興味のありそうな追加資料に目を通してください
-- 以下の _**Introduction to Diffusers**_ ノートブックで、🤗Diffusersライブラリー使った理論の実践をチェックしてみてください
+- 以下の _**Introduction to Diffusers**_ ノートブックで、🤗Diffusersライブラリを使った理論の実践をチェックしてみてください
 - ノートブックまたはリンクされたトレーニングスクリプトを使用して、独自のdiffusionモデルをトレーニングし、共有することができます
 - (オプション) 最小限のゼロからの実装に興味があり、様々な設計上の決定を検討したい場合は、 _**Diffusion Models from Scratch**_ ノートブックでより深く掘り下げることができます
 - (オプション) [このビデオ](https://www.youtube.com/watch?v=09o5cv6u76c)で、このユニットの教材をざっと見てみてください。
@@ -17,7 +17,7 @@ Hugging Face Diffusionモデルコースのユニット1へようこそ!この�
 
 :loudspeaker: [Discord](https://huggingface.co/join/discord)に参加するのを忘れないでください。ここでは、`#diffusion-models-class`チャンネルで教材について議論したり、作ったものを共有したりすることができます。
 
-## What Are Diffusion Models?
+## Diffusionモデルとは何か？
 
 Diffusion models are a relatively recent addition to a group of algorithms known as 'generative models'. The goal of generative modeling is to learn to **generate** data, such as images or audio, given a number of training examples. A good generative model will create a **diverse** set of outputs that resemble the training data without being exact copies. How do diffusion models achieve this? Let's focus on the image generation case for illustrative purposes.
 
@@ -27,7 +27,7 @@ Diffusion models are a relatively recent addition to a group of algorithms known
     <em> Figure from DDPM paper (https://arxiv.org/abs/2006.11239). </em>
 <p>
 
-The secret to diffusion models' success is the iterative nature of the diffusion process. Generation begins with random noise, but this is gradually refined over a number of steps until an output image emerges. At each step, the model estimates how we could go from the current input to a completely denoised version. However, since we only make a small change at every step, any errors in this estimate at the early stages (where predicting the final output is extremely difficult) can be corrected in later updates. 
+The secret to diffusion models' success is the iterative nature of the diffusion process. Generation begins with random noise, but this is gradually refined over a number of steps until an output image emerges. At each step, the model estimates how we could go from the current input to a completely denoised version. However, since we only make a small change at every step, any errors in this estimate at the early stages (where predicting the final output is extremely difficult) can be corrected in later updates.
 
 Training the model is relatively straightforward compared to some other types of generative model. We repeatedly
 1) Load in some images from the training data
@@ -38,12 +38,12 @@ Training the model is relatively straightforward compared to some other types of
 
 To generate new images with a trained model, we begin with a completely random input and repeatedly feed it through the model, updating it each time by a small amount based on the model prediction. As we'll see, there are a number of sampling methods that try to streamline this process so that we can generate good images with as few steps as possible.
 
-We will show each of these steps in detail in the hands-on notebooks here in unit 1. In unit 2, we will look at how this process can be modified to add additional control over the model outputs through extra conditioning (such as a class label) or with techniques such as guidance. And units 3 and 4 will explore an extremely powerful diffusion model called Stable Diffusion, which can generate images given text descriptions.  
+We will show each of these steps in detail in the hands-on notebooks here in unit 1. In unit 2, we will look at how this process can be modified to add additional control over the model outputs through extra conditioning (such as a class label) or with techniques such as guidance. And units 3 and 4 will explore an extremely powerful diffusion model called Stable Diffusion, which can generate images given text descriptions.
 
 ## ハンズオンノートブック
 
-この時点で、付属のノートブックに取り掛かるのに十分な知識があるのです!この2つのノートは、同じアイデアを異なる方法で表現しています。 
- 
+この時点で、付属のノートブックに取り掛かるのに十分な知識があるのです!この2つのノートは、同じアイデアを異なる方法で表現しています。
+
 | Chapter                                     | Colab                                                                                                                                                                                               | Kaggle                                                                                                                                                                                                   | Gradient                                                                                                                                                                               | Studio Lab                                                                                                                                                                                                   |
 |:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Introduction to Diffusers                                | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/unit1/01_introduction_to_diffusers.ipynb)              | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/huggingface/diffusion-models-class/blob/main/unit1/01_introduction_to_diffusers.ipynb)              | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/huggingface/diffusion-models-class/blob/main/unit1/01_introduction_to_diffusers.ipynb)              | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/huggingface/diffusion-models-class/blob/main/unit1/01_introduction_to_diffusers.ipynb)              |
@@ -57,12 +57,12 @@ In _**Diffusion Models from Scratch**_, we show those same steps (adding noise t
 
 さて、基本を押さえたところで、1つまたは複数の拡散モデルをトレーニングしてみましょう!いくつかの提案は、 _**Introduction to Diffusers**_ のノートブックの最後に記載されています。あなたの結果、トレーニングレシピ、発見をコミュニティと共有し、これらのモデルをトレーニングする最良の方法を共同で見つけ出すことができるようにしてください。
 
-## Some Additional Resources
+## 追加資料
 
-[The Annotated Diffusion Model](https://huggingface.co/blog/annotated-diffusion) is a very in-depth walk-through of the code and theory behind DDPMs with 
+[The Annotated Diffusion Model](https://huggingface.co/blog/annotated-diffusion) is a very in-depth walk-through of the code and theory behind DDPMs with
  maths and code showing all the different components. It also links to a number of papers for further reading.
 
-Hugging Face documentation on [Unconditional Image-Generation](https://huggingface.co/docs/diffusers/training/unconditional_training) for some examples of how to train diffusion models using the official training example script, including code showing how to create your own dataset. 
+Hugging Face documentation on [Unconditional Image-Generation](https://huggingface.co/docs/diffusers/training/unconditional_training) for some examples of how to train diffusion models using the official training example script, including code showing how to create your own dataset.
 
 AI Coffee Break video on Diffusion Models: https://www.youtube.com/watch?v=344w5h24-h8
 
