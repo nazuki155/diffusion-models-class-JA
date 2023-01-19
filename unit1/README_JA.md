@@ -29,12 +29,17 @@ Diffusion models are a relatively recent addition to a group of algorithms known
 
 The secret to diffusion models' success is the iterative nature of the diffusion process. Generation begins with random noise, but this is gradually refined over a number of steps until an output image emerges. At each step, the model estimates how we could go from the current input to a completely denoised version. However, since we only make a small change at every step, any errors in this estimate at the early stages (where predicting the final output is extremely difficult) can be corrected in later updates.
 
-Training the model is relatively straightforward compared to some other types of generative model. We repeatedly
-1) Load in some images from the training data
-2) Add noise, in different amounts. Remember, we want the model to do a good job estimating how to 'fix' (denoise) both extremely noisy images and images that are close to perfect.
-3) Feed the noisy versions of the inputs into the model
-4) Evaluate how well the model does at denoising these inputs
-5) Use this information to update the model weights
+モデルの学習は、他のタイプの生成モデルに比べて比較的簡単です
+
+1・学習データから画像を読み込む
+
+2・様々な量のノイズを加える。このとき、極端にノイズの多い画像と完璧に近い画像の両方を「修正」（ノイズ除去）する方法をモデルがうまく推定できるようにすることが重要です。
+
+3・入力のノイズをモデルに与える
+
+4・これらの入力に対して、モデルがどの程度ノイズ除去を行うかを評価する
+
+5・この情報を使ってモデルの重みを更新する
 
 To generate new images with a trained model, we begin with a completely random input and repeatedly feed it through the model, updating it each time by a small amount based on the model prediction. As we'll see, there are a number of sampling methods that try to streamline this process so that we can generate good images with as few steps as possible.
 
