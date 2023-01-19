@@ -18,8 +18,8 @@ Hugging Face Diffusionモデルコースのユニット1へようこそ!この�
 :loudspeaker: [Discord](https://huggingface.co/join/discord)に参加するのを忘れないでください。ここでは、`#diffusion-models-class`チャンネルで教材について議論したり、作ったものを共有したりすることができます。
 
 ## Diffusionモデルとは何か？
+Diffusionも出るとは、「生成モデル」と呼ばれるアルゴリズム群に比較的最近追加されたものです。生成モデリングの目的は、多くの学習例が与えられたときに、画像や音声などのデータを生成することを学習することです。優れた生成モデルは、学習データを正確にコピーすることなく、それに類似した多様な出力セットを作成します。拡散モデルはどのようにしてこれを実現するのでしょうか？ここでは、説明のために画像生成のケースに焦点を当ててみましょう。
 
-Diffusion models are a relatively recent addition to a group of algorithms known as 'generative models'. The goal of generative modeling is to learn to **generate** data, such as images or audio, given a number of training examples. A good generative model will create a **diverse** set of outputs that resemble the training data without being exact copies. How do diffusion models achieve this? Let's focus on the image generation case for illustrative purposes.
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/10695622/174349667-04e9e485-793b-429a-affe-096e8199ad5b.png" width="800"/>
