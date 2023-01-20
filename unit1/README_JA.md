@@ -29,12 +29,12 @@ Diffusionモデルとは、「生成モデル」と呼ばれるアルゴリズ�
 
 diffusionモデルの成功の秘密は、diffusionプロセスの反復性にあります。生成はランダムなノイズから始まりますが、出力画像が現れるまで、何段階にもわたって徐々に洗練されていきます。各ステップにおいて、モデルは現在の入力から完全にノイズ除去されたバージョンまでどのように進むかを推定します。しかし、各ステップで小さな変更を加えるだけなので、初期段階（最終的な出力を予測することが非常に難しい段階）でのこの推定値の誤差は、後の更新で修正することができます。
 
-Training the model is relatively straightforward compared to some other types of generative model. We repeatedly
-1) Load in some images from the training data
-2) Add noise, in different amounts. Remember, we want the model to do a good job estimating how to 'fix' (denoise) both extremely noisy images and images that are close to perfect.
-3) Feed the noisy versions of the inputs into the model
-4) Evaluate how well the model does at denoising these inputs
-5) Use this information to update the model weights
+モデルの学習は、他のタイプの生成モデルに比べて比較的簡単です。以下を繰り返します
+1) 学習データから画像をいくつか読み込む
+2) 様々な量のノイズを加える。このとき、極端にノイズの多い画像と完璧に近い画像の両方を「修正」（ノイズ除去）する方法をモデルがうまく推定できるようにすることが重要です。
+3) ノイズがかかったバージョンの入力をモデルに送り込む
+4) これらの入力に対して、モデルがどの程度ノイズ除去を行うかを評価する
+5) この情報を使ってモデルの重みを更新する
 
 To generate new images with a trained model, we begin with a completely random input and repeatedly feed it through the model, updating it each time by a small amount based on the model prediction. As we'll see, there are a number of sampling methods that try to streamline this process so that we can generate good images with as few steps as possible.
 
