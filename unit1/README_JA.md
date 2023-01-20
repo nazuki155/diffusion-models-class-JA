@@ -35,10 +35,10 @@ diffusionモデルの成功の秘密は、diffusionプロセスの反復性に�
 3) ノイズがかかったバージョンの入力をモデルに送り込む
 4) これらの入力に対して、モデルがどの程度ノイズ除去を行うかを評価する
 5) この情報を使ってモデルの重みを更新する
+    
+学習されたモデルを使って新しい画像を生成するには、まず完全にランダムな入力から始めて、それを繰り返しモデルに与え、モデルの予測に基づいて毎回少しずつ更新していきます。後述しますが、このプロセスを効率化し、できるだけ少ないステップで良い画像を生成できるようにするためのサンプリングのやり方が数多く存在します。
 
-To generate new images with a trained model, we begin with a completely random input and repeatedly feed it through the model, updating it each time by a small amount based on the model prediction. As we'll see, there are a number of sampling methods that try to streamline this process so that we can generate good images with as few steps as possible.
-
-We will show each of these steps in detail in the hands-on notebooks here in unit 1. In unit 2, we will look at how this process can be modified to add additional control over the model outputs through extra conditioning (such as a class label) or with techniques such as guidance. And units 3 and 4 will explore an extremely powerful diffusion model called Stable Diffusion, which can generate images given text descriptions.
+このユニット1では、それぞれのステップをハンズオンノートで詳しく紹介します。ユニット2では、このプロセスをどのように変更し、追加の条件付け（クラスラベルなど）やガイダンスといった手法によって、モデルの出力にさらなる制御を加えることができるかを見ていきます。そしてユニット3と4では、Stable Diffusionと呼ばれる非常に強力なdiffusionモデルを探求します。このモデルは、テキストの説明が与えられたときに画像を生成することができます
 
 ## ハンズオンノートブック
 
