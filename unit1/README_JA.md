@@ -27,7 +27,7 @@ Diffusionモデルとは、「生成モデル」と呼ばれるアルゴリズ�
     <em> Figure from DDPM paper (https://arxiv.org/abs/2006.11239). </em>
 <p>
 
-The secret to diffusion models' success is the iterative nature of the diffusion process. Generation begins with random noise, but this is gradually refined over a number of steps until an output image emerges. At each step, the model estimates how we could go from the current input to a completely denoised version. However, since we only make a small change at every step, any errors in this estimate at the early stages (where predicting the final output is extremely difficult) can be corrected in later updates.
+diffusionモデルの成功の秘密は、diffusionプロセスの反復性にあります。生成はランダムなノイズから始まりますが、出力画像が現れるまで、何段階にもわたって徐々に洗練されていきます。各ステップにおいて、モデルは現在の入力から完全にノイズ除去されたバージョンまでどのように進むかを推定します。しかし、各ステップで小さな変更を加えるだけなので、初期段階（最終的な出力を予測することが非常に難しい段階）でのこの推定値の誤差は、後の更新で修正することができます。
 
 Training the model is relatively straightforward compared to some other types of generative model. We repeatedly
 1) Load in some images from the training data
